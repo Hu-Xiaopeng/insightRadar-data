@@ -7,6 +7,7 @@
 ```text
 data/
   cards.jsonl              全部卡片，一行一张
+  papers_mainline2.jsonl   论文主线2（536 篇论文卡）
   manifest.json            总数、sha256、最近一次 run
   images/                  按内容哈希存放的 WebP / SVG
   schema/card.schema.json  卡片字段约束
@@ -26,6 +27,12 @@ print(len(cards))
 ```
 
 卡片里的 `image` 是相对 `data/` 的路径，例如 `images/ab/<sha256>.webp`。
+
+论文主线2单独存放：
+
+```python
+papers = [json.loads(line) for line in open("data/papers_mainline2.jsonl", encoding="utf-8")]
+```
 
 ## 更新
 

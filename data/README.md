@@ -8,12 +8,15 @@
 data/
   manifest.json
   cards.jsonl
+  papers_mainline2.jsonl
+  papers_mainline2.manifest.json
   images/
     ab/<sha256>.webp
   schema/card.schema.json
 ```
 
 - `cards.jsonl`：全部卡片，一行一张，按 `id` 稳定排序。
+- `papers_mainline2.jsonl`：论文主线2 的 536 篇论文卡，独立文件，未混入主卡片库。
 - `manifest.json`：总数、文件 sha256、最近一次 run。
 - `images/`：按内容哈希命名的图片。
 - `schema/card.schema.json`：卡片字段约束。
