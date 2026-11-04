@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Insight Radar Card",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "one_liner",
+    "summary",
+    "url",
+    "source",
+    "product_line",
+    "standard_category",
+    "quality_tier",
+    "project_date",
+    "crawled_at"
+  ],
+  "properties": {
+    "id": { "type": "integer" },
+    "image": { "type": "string" },
+    "title": { "type": "string", "minLength": 1 },
+    "one_liner": { "type": "string", "minLength": 1 },
+    "innovation": { "type": "string" },
+    "summary": { "type": "string", "minLength": 1 },
+    "scenarios": { "type": "array", "items": { "type": "string" } },
+    "product_function": { "type": "array", "items": { "type": "string" } },
+    "tech_capability": { "type": "array", "items": { "type": "string" } },
+    "url": { "type": "string", "format": "uri" },
+    "source": {
+      "type": "object",
+      "required": ["id", "name"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" }
+      }
+    },
+    "standard_category": {
+      "type": "string",
+      "enum": ["论文", "专利", "demo类", "技术类", "公众号"]
+    },
+    "device_tags": { "type": "array", "items": { "type": "string" } },
+    "hardware_tag": {
+      "type": "string",
+      "enum": ["硬件", "软件", "软硬结合"]
+    },
+    "ai_custom": { "type": "array", "items": { "type": "string" } },
+    "product_line": {
+      "type": "string",
+      "enum": ["手机", "平板", "PC", "手表", "耳机", "眼镜", "智慧屏", "车机", "音箱", "南向硬件", "跨端"]
+    },
+    "project_date": { "type": "string" },
+    "crawled_at": { "type": "string" },
+    "quality_tier": { "type": "string", "enum": ["A", "B", "C"] },
+    "content_hash": { "type": "string" }
+  }
+}

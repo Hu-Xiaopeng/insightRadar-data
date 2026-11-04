@@ -1,0 +1,8 @@
+* text=auto
+*.jsonl text eol=lf
+*.json text eol=lf
+*.svg text eol=lf
+*.webp binary
+*.png binary
+*.jpg binary
+*.gif binary

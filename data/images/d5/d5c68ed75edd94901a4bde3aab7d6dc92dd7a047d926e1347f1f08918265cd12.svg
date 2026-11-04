@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+<rect width="1200" height="750" fill="#111827"/>
+<circle cx="1090" cy="100" r="180" fill="#a78bfa" opacity="0.18"/>
+<rect x="64" y="70" width="160" height="34" rx="8" fill="#a78bfa"/>
+<text x="80" y="94" font-size="18" fill="#0b1220" font-family="Microsoft YaHei, sans-serif" font-weight="700">C</text>
+<text x="64" y="210" font-size="36" fill="#f8fafc" font-family="Microsoft YaHei, sans-serif">混合计算机使用：面向通用AI代理</text><text x="64" y="262" font-size="36" fill="#f8fafc" font-family="Microsoft YaHei, sans-serif">的统一编程、语义与视觉接口</text>
+<text x="64" y="640" font-size="24" fill="#a78bfa" font-family="Microsoft YaHei, sans-serif">PC · 交互</text>
+<text x="64" y="690" font-size="18" fill="#94a3b8" font-family="Microsoft YaHei, sans-serif">arXiv</text>
+</svg>

@@ -1,0 +1,16 @@
+# 抓取中间产物：不进仓库，避免每次几 MB 的噪音
+inbox/
+insights/batches/
+insights/images/
+insights/gallery.json
+team/team.db
+team/team.db-wal
+team/team.db-shm
+cache/
+logs/pending_push.json
+__pycache__/
+*.pyc
+.env
+
+# 但 logs 的 md 记录要留
+!logs/*.md

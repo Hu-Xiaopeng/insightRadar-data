@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+<rect width="1200" height="750" fill="#0b1220"/>
+<circle cx="1090" cy="100" r="180" fill="#fb923c" opacity="0.18"/>
+<rect x="64" y="70" width="160" height="34" rx="8" fill="#fb923c"/>
+<text x="80" y="94" font-size="18" fill="#0b1220" font-family="Microsoft YaHei, sans-serif" font-weight="700">C</text>
+<text x="64" y="210" font-size="36" fill="#f8fafc" font-family="Microsoft YaHei, sans-serif">RadPose：基于ISAC的射</text><text x="64" y="262" font-size="36" fill="#f8fafc" font-family="Microsoft YaHei, sans-serif">频3D人体姿态估计</text>
+<text x="64" y="640" font-size="24" fill="#fb923c" font-family="Microsoft YaHei, sans-serif">南向硬件 · 系统能力</text>
+<text x="64" y="690" font-size="18" fill="#94a3b8" font-family="Microsoft YaHei, sans-serif">arXiv</text>
+</svg>

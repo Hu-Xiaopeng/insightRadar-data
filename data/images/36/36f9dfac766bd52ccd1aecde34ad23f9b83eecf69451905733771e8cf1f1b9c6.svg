@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+<rect width="1200" height="750" fill="#0f172a"/>
+<circle cx="1090" cy="100" r="180" fill="#2dd4bf" opacity="0.18"/>
+<rect x="64" y="70" width="160" height="34" rx="8" fill="#2dd4bf"/>
+<text x="80" y="94" font-size="18" fill="#0b1220" font-family="Microsoft YaHei, sans-serif" font-weight="700">C</text>
+<text x="64" y="210" font-size="36" fill="#f8fafc" font-family="Microsoft YaHei, sans-serif">超高分辨率静态360度远程呈现的</text><text x="64" y="262" font-size="36" fill="#f8fafc" font-family="Microsoft YaHei, sans-serif">多层系统</text>
+<text x="64" y="640" font-size="24" fill="#2dd4bf" font-family="Microsoft YaHei, sans-serif">智慧屏 · 系统能力</text>
+<text x="64" y="690" font-size="18" fill="#94a3b8" font-family="Microsoft YaHei, sans-serif">arXiv</text>
+</svg>

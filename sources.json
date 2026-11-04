@@ -1,0 +1,1658 @@
+{
+ "meta": {
+  "updated": "2026-11-02",
+  "principle": "按信息在创新链上的位置分组，不按平台分",
+  "chain": {
+   "L1": "已发生：更新日志、应用商店、外媒、发布会、拆解",
+   "L2": "正在发生：黑客松、论文、专利、开源、众筹、供应链、招聘",
+   "L3": "人在用：社交、评论区、投诉",
+   "L4": "二手加工：榜单、日报、newsletter",
+   "L5": "线下：展会"
+  },
+  "status": {
+   "verified": "已验证可抓",
+   "config": "需一次性配置（登录态/cookie）",
+   "todo": "未验证",
+   "blocked": "走不通，必须有 alternative"
+  },
+  "tier": {
+   "A": "脚本直抓（feed / API / 稳定 XML）",
+   "B": "需检索或 HTML 解析",
+   "C": "需登录态"
+  },
+  "removed": [
+   {
+    "id": "appstore_new",
+    "date": "2026-11-03",
+    "why": "不需要商店与客服反馈类源"
+   },
+   {
+    "id": "google_play",
+    "date": "2026-11-03",
+    "why": "不需要商店与客服反馈类源"
+   },
+   {
+    "id": "coolapk",
+    "date": "2026-11-03",
+    "why": "不需要商店与客服反馈类源"
+   },
+   {
+    "id": "app_reviews",
+    "date": "2026-11-03",
+    "why": "不需要商店与客服反馈类源"
+   },
+   {
+    "id": "heimao",
+    "date": "2026-11-03",
+    "why": "不需要商店与客服反馈类源"
+   },
+   {
+    "id": "ecommerce_reviews",
+    "date": "2026-11-03",
+    "why": "不需要商店与客服反馈类源"
+   },
+   {
+    "id": "appstore_top",
+    "date": "2026-11-03",
+    "why": "不需要商店与客服反馈类源"
+   }
+  ]
+ },
+ "sources": [
+  {
+   "id": "devpost",
+   "name": "Devpost",
+   "group": "A1",
+   "chain": "L2",
+   "tier": "A",
+   "status": "verified",
+   "entry": "/software（Staff picks）+ /software/popular 第 1–8 页 + 6 个 2026 赛事项目页",
+   "covers": [
+    "跨端"
+   ],
+   "note": "★ 项目卡片结构是 div[data-software-id] + a.link-to-software，标题取 img[alt]。/software 的 ?page= 无效，但 /software/popular?page=N 有效；最多可翻到第 8 页。",
+   "via": "script",
+   "probe": "https://devpost.com/software",
+   "last_count": 184,
+   "fail_count": 0,
+   "parse": {
+    "entries": [
+     "https://devpost.com/software",
+     "https://devpost.com/software/popular",
+     "https://devpost.com/software/popular?page=2",
+     "https://devpost.com/software/popular?page=3",
+     "https://devpost.com/software/popular?page=4",
+     "https://devpost.com/software/popular?page=5",
+     "https://devpost.com/software/popular?page=6",
+     "https://devpost.com/software/popular?page=7",
+     "https://devpost.com/software/popular?page=8",
+     "https://opencv26.devpost.com/project-gallery",
+     "https://assistive-innovation-challenge.devpost.com/project-gallery",
+     "https://arm-executorch.devpost.com/project-gallery",
+     "https://build-next-big-thing-with-ai.devpost.com/project-gallery",
+     "https://hack-the-weather.devpost.com/project-gallery",
+     "https://hack2heal.devpost.com/project-gallery"
+    ]
+   }
+  },
+  {
+   "id": "snap_showcase",
+   "name": "Snap Spectacles 黑客松展示",
+   "group": "A1",
+   "chain": "L2",
+   "tier": "B",
+   "status": "verified",
+   "entry": "https://developers.snap.com/spectacles/spectacles-community/hackathon-showcase",
+   "covers": [
+    "眼镜"
+   ],
+   "note": "官方维护的 Reality Hack at AWE 项目展示，含名次、简介、Devpost / GitHub / 视频链接；用专用解析器抓项目卡。",
+   "via": "script",
+   "probe": "https://developers.snap.com/spectacles/spectacles-community/hackathon-showcase",
+   "last_ok": "2026-11-04",
+   "last_count": 25,
+   "parse": {
+    "entries": [
+     "https://developers.snap.com/spectacles/spectacles-community/hackathon-showcase"
+    ]
+   }
+  },
+  {
+   "id": "mit_reality",
+   "name": "MIT Reality Hack",
+   "group": "A1",
+   "chain": "L2",
+   "tier": "B",
+   "status": "verified",
+   "entry": "reality-hack-2026.devpost.com/project-gallery（官网 SSL 不可达，走 Devpost 赛事页）",
+   "covers": [
+    "眼镜",
+    "跨端"
+   ],
+   "note": "MIT Reality Hack 2026 官方 Devpost 项目页；24 个项目，含获奖信息。官网 realityhack.org 当前 SSL/502。",
+   "via": "script",
+   "probe": "https://reality-hack-2026.devpost.com/project-gallery",
+   "last_ok": "2026-11-04",
+   "last_count": 24,
+   "parse": {
+    "entries": [
+     "https://reality-hack-2026.devpost.com/project-gallery"
+    ]
+   }
+  },
+  {
+   "id": "mit_hardmode",
+   "name": "MIT Hard Mode",
+   "group": "A1",
+   "chain": "L2",
+   "tier": "B",
+   "status": "verified",
+   "entry": "hardmode.devpost.com/project-gallery（官网 SSL 不可达，走 Devpost 赛事页）",
+   "covers": [
+    "南向硬件"
+   ],
+   "note": "HARD MODE: Hardware x AI Hackathon 官方 Devpost 项目页；22 个项目，含获奖信息。官网 hardmode.mit.edu 当前 SSL/502。",
+   "via": "script",
+   "probe": "https://hardmode.devpost.com/project-gallery",
+   "last_ok": "2026-11-04",
+   "last_count": 22,
+   "parse": {
+    "entries": [
+     "https://hardmode.devpost.com/project-gallery"
+    ]
+   }
+  },
+  {
+   "id": "awe_hack",
+   "name": "Reality Hack at AWE",
+   "group": "A1",
+   "chain": "L2",
+   "tier": "B",
+   "status": "blocked",
+   "entry": "AWE 官网只有会议/活动页，没有独立项目列表；AWE 2026 项目已由 snap_showcase 覆盖",
+   "covers": [
+    "眼镜"
+   ],
+   "note": "不要再抓首页，首页只有会议导航；Reality Hack at AWE 2026 项目已由 snap_showcase 的官方展示页覆盖，避免重复。",
+   "via": "webfetch",
+   "last_ok": "2026-11-04",
+   "fail_count": 0,
+   "parse": {}
+  },
+  {
+   "id": "devfolio",
+   "name": "Devfolio",
+   "group": "A1",
+   "chain": "L2",
+   "tier": "B",
+   "status": "verified",
+   "entry": "https://devfolio.co/projects",
+   "covers": [
+    "跨端"
+   ],
+   "note": "首页只渲染 4 个项目（最新的），无分页；项目质量偏区块链/hackathon 娱乐向，与预研相关性低",
+   "via": "script",
+   "probe": "https://devfolio.co/projects",
+   "parse": {}
+  },
+  {
+   "id": "mlh",
+   "name": "Major League Hacking",
+   "group": "A1",
+   "chain": "L2",
+   "tier": "B",
+   "status": "todo",
+   "entry": "mlh.io",
+   "covers": [
+    "跨端"
+   ],
+   "note": "赛季主题风向 | 事件列表需登录才见完整赛程",
+   "via": "webfetch",
+   "probe": "https://mlh.io/seasons/2026/events",
+   "last_ok": "2026-11-02",
+   "fail_count": 0,
+   "parse": {
+    "match": "/events/",
+    "min_len": 8,
+    "abs": "https://mlh.io"
+   }
+  },
+  {
+   "id": "vendor_hackathon",
+   "name": "各厂开发者大赛",
+   "group": "A1",
+   "chain": "L2",
+   "tier": "B",
+   "status": "todo",
+   "entry": "Swift Student Challenge / Google Solution Challenge / 华为耀星 / 小米·OPPO·vivo",
+   "covers": [
+    "手机",
+    "跨端"
+   ],
+   "note": "年度，获奖名单是筛过一遍的",
+   "via": "manual",
+   "parse": {}
+  },
+  {
+   "id": "x",
+   "name": "X / Twitter",
+   "group": "A2",
+   "chain": "L2",
+   "tier": "C",
+   "status": "config",
+   "entry": "Agent-Reach + Cookie-Editor 导出 auth_token/ct0",
+   "covers": [
+    "跨端"
+   ],
+   "note": "开发者发演示视频第一现场",
+   "alternative": "搜「@账号 + 关键词」，爆款会被中文媒体转述",
+   "via": "manual",
+   "parse": {}
+  },
+  {
+   "id": "producthunt",
+   "name": "Product Hunt",
+   "group": "A2",
+   "chain": "L2",
+   "tier": "A",
+   "status": "verified",
+   "entry": "https://www.producthunt.com/feed",
+   "covers": [
+    "跨端"
+   ],
+   "note": "feed 通；列表只有一句话，必须进详情页",
+   "last_count": 50,
+   "via": "script",
+   "probe": "https://www.producthunt.com/feed",
+   "parse": {}
+  },
+  {
+   "id": "hackernews",
+   "name": "Hacker News",
+   "group": "A2",
+   "chain": "L2",
+   "tier": "A",
+   "status": "verified",
+   "entry": "news.ycombinator.com/rss 返回 419",
+   "covers": [
+    "跨端"
+   ],
+   "note": "评论区比正文有料 | ★ 官方 RSS 419，hnrss 可用；Algolia API 作备用 | 备用 hn.algolia.com/api/v1/search?tags=front_page 实测 50 条可用",
+   "alternative": "hnrss.org/frontpage 或 Algolia API hn.algolia.com/api/v1/search?tags=front_page",
+   "via": "script",
+   "probe": "https://hnrss.org/frontpage",
+   "last_ok": "2026-11-02",
+   "fail_count": 0,
+   "last_count": 20,
+   "parse": {}
+  },
+  {
+   "id": "reddit",
+   "name": "Reddit",
+   "group": "A2",
+   "chain": "L3",
+   "tier": "C",
+   "status": "config",
+   "entry": "OpenCLI 复用浏览器会话",
+   "covers": [
+    "跨端"
+   ],
+   "note": "r/somethingimade 等垂类",
+   "via": "manual",
+   "parse": {}
+  },
+  {
+   "id": "indiehackers",
+   "name": "Indie Hackers",
+   "group": "A2",
+   "chain": "L2",
+   "tier": "B",
+   "status": "blocked",
+   "entry": "indiehackers.com/feed.xml 已 404",
+   "covers": [
+    "跨端"
+   ],
+   "note": "独立开发者收入复盘",
+   "alternative": "站点首页 HTML 解析，或跳过",
+   "via": "webfetch",
+   "parse": {}
+  },
+  {
+   "id": "acm_dl",
+   "name": "ACM DL · CHI/UIST",
+   "group": "A3",
+   "chain": "L2",
+   "tier": "B",
+   "status": "blocked",
+   "entry": "dl.acm.org 开放 proceedings",
+   "covers": [
+    "跨端"
+   ],
+   "note": "交互范式比产品早 3-5 年 | dl.acm.org 403",
+   "via": "webfetch",
+   "last_ok": "",
+   "alternative": "用 crossref / dblp 查论文，或 WebFetch 打开 dl.acm.org",
+   "parse": {}
+  },
+  {
+   "id": "arxiv",
+   "name": "arXiv cs.HC",
+   "group": "A3",
+   "chain": "L2",
+   "tier": "A",
+   "status": "verified",
+   "entry": "http://export.arxiv.org/rss/cs.HC",
+   "covers": [
+    "跨端"
+   ],
+   "note": "67KB RSS，含摘要 | 偶发返回空文档，需限速（<1次/秒）",
+   "via": "script",
+   "probe": "https://export.arxiv.org/rss/cs.HC",
+   "parse": {
+    "cats": [
+     "cs.HC",
+     "cs.CV",
+     "cs.RO",
+     "cs.AI",
+     "eess.AS",
+     "cs.GR"
+    ]
+   }
+  },
+  {
+   "id": "openreview",
+   "name": "OpenReview",
+   "group": "A3",
+   "chain": "L2",
+   "tier": "B",
+   "status": "verified",
+   "entry": "api2.openreview.net 返回 403",
+   "covers": [
+    "跨端"
+   ],
+   "note": "评审过程公开 | api2 403，网页版可读",
+   "alternative": "openreview.net 网页版按会议检索",
+   "via": "script",
+   "probe": "https://openreview.net/group?id=ACM.org/CHI/2026",
+   "last_ok": "2026-11-02",
+   "fail_count": 0,
+   "parse": {}
+  },
+  {
+   "id": "pwc",
+   "name": "Papers with Code",
+   "group": "A3",
+   "chain": "L2",
+   "tier": "B",
+   "status": "blocked",
+   "entry": "paperswithcode.com",
+   "covers": [
+    "跨端"
+   ],
+   "note": "论文带代码 | SSLError",
+   "via": "webfetch",
+   "last_ok": "",
+   "alternative": "用 arXiv + crossref 组合",
+   "parse": {}
+  },
+  {
+   "id": "siggraph",
+   "name": "SIGGRAPH",
+   "group": "A3",
+   "chain": "L2",
+   "tier": "B",
+   "status": "verified",
+   "entry": "siggraph.org",
+   "covers": [
+    "跨端"
+   ],
+   "note": "年度站换域名，s2026 可用",
+   "via": "script",
+   "probe": "https://s2026.siggraph.org",
+   "last_ok": "2026-11-02",
+   "fail_count": 0,
+   "parse": {}
+  },
+  {
+   "id": "ubicomp",
+   "name": "UbiComp / ISMAR",
+   "group": "A3",
+   "chain": "L2",
+   "tier": "B",
+   "status": "verified",
+   "entry": "ACM DL / IEEE",
+   "covers": [
+    "跨端"
+   ],
+   "note": "",
+   "via": "script",
+   "probe": "https://www.ubicomp.org",
+   "last_ok": "2026-11-02",
+   "fail_count": 0,
+   "parse": {}
+  },
+  {
+   "id": "scholar_alert",
+   "name": "Google Scholar 提醒",
+   "group": "A3",
+   "chain": "L2",
+   "tier": "C",
+   "status": "config",
+   "entry": "关键词邮件订阅",
+   "covers": [
+    "跨端"
+   ],
+   "note": "被动收，不占爬取预算",
+   "via": "manual",
+   "parse": {}
+  },
+  {
+   "id": "lens",
+   "name": "Lens.org",
+   "group": "A4",
+   "chain": "L2",
+   "tier": "B",
+   "status": "blocked",
+   "entry": "lens.org",
+   "covers": [
+    "跨端"
+   ],
+   "note": "专利与论文联查，免费 | 405",
+   "via": "webfetch",
+   "last_ok": "",
+   "alternative": "CNIPA 已通；Google Patents 需 WebFetch",
+   "parse": {}
+  },
+  {
+   "id": "google_patents",
+   "name": "Google Patents",
+   "group": "A4",
+   "chain": "L2",
+   "tier": "B",
+   "status": "todo",
+   "entry": "patents.google.com/xhr/query?url=q%3D<关键词>",
+   "covers": [
+    "跨端"
+   ],
+   "note": "xhr 接口偶发 200 但代理频繁 502，10 次里不到 2 次成功，不够稳定到能进定时任务",
+   "via": "webfetch",
+   "last_ok": "",
+   "last_count": 10,
+   "fail_count": 0,
+   "probe": "https://patents.google.com/xhr/query?url=",
+   "parse": {
+    "terms": [
+     "camera gesture",
+     "wearable camera",
+     "gimbal stabilizer",
+     "eye tracking"
+    ],
+    "timeout": 8,
+    "retry": 0
+   },
+   "alternative": "WebFetch 打开 patents.google.com/?q=<关键词>；免费 API 里 Lens/EPO/USPTO 全部要 key 或反爬"
+  },
+  {
+   "id": "cnipa",
+   "name": "CNIPA 国知局",
+   "group": "A4",
+   "chain": "L2",
+   "tier": "B",
+   "status": "blocked",
+   "entry": "cnipa.gov.cn 首页新闻",
+   "covers": [
+    "跨端"
+   ],
+   "note": "首页 HTML 经代理转码后部分字节已丢失（0xe5 0x20 0xb1 这类），无法逆推；且内容是政策新闻不是专利数据",
+   "via": "webfetch",
+   "probe": "https://www.cnipa.gov.cn",
+   "last_ok": "2026-11-02",
+   "fail_count": 0,
+   "parse": {},
+   "alternative": "专利检索走 patents.google.com 手工查，或用 Lens.org；CNIPA 检索系统 pss-system 有 412 反爬"
+  },
+  {
+   "id": "zhihuiya",
+   "name": "智慧芽 PatSnap",
+   "group": "A4",
+   "chain": "L2",
+   "tier": "C",
+   "status": "blocked",
+   "entry": "付费",
+   "covers": [
+    "跨端"
+   ],
+   "note": "同族与引用图谱强",
+   "alternative": "无免费替代，按需单次查",
+   "via": "manual",
+   "parse": {}
+  },
+  {
+   "id": "github_trending",
+   "name": "GitHub Trending",
+   "group": "A5",
+   "chain": "L2",
+   "tier": "B",
+   "status": "verified",
+   "entry": "https://github.com/trending?since=daily",
+   "covers": [
+    "跨端"
+   ],
+   "note": "594KB HTML，需解析 repo 名与今日星 | 网页 ProxyError，改走 search API 按建库时间+星数排序，效果等价",
+   "via": "script",
+   "probe": "https://api.github.com/search/repositories?q=created:><since>&sort=stars&order=desc&per_page=100",
+   "parse": {
+    "pages": 3,
+    "per_page": 100
+   }
+  },
+  {
+   "id": "huggingface",
+   "name": "Hugging Face Spaces",
+   "group": "A5",
+   "chain": "L2",
+   "tier": "A",
+   "status": "todo",
+   "entry": "https://huggingface.co/api/spaces?sort=likes&direction=-1&limit=30",
+   "covers": [
+    "跨端"
+   ],
+   "note": "api 冒烟通但实抓 SSL 反复失败，降 webfetch",
+   "via": "webfetch",
+   "probe": "https://huggingface.co/api/models?sort=likes&direction=-1&limit=30&full=true",
+   "parse": {}
+  },
+  {
+   "id": "modelscope",
+   "name": "魔搭 ModelScope",
+   "group": "A5",
+   "chain": "L2",
+   "tier": "B",
+   "status": "todo",
+   "entry": "modelscope.cn",
+   "covers": [
+    "跨端"
+   ],
+   "note": "中文场景能力更贴地",
+   "via": "webfetch",
+   "probe": "https://www.modelscope.cn",
+   "last_ok": "2026-11-02",
+   "fail_count": 0,
+   "parse": {}
+  },
+  {
+   "id": "replicate",
+   "name": "Replicate",
+   "group": "A5",
+   "chain": "L2",
+   "tier": "B",
+   "status": "verified",
+   "entry": "replicate.com",
+   "covers": [
+    "跨端"
+   ],
+   "note": "在线就能跑",
+   "via": "script",
+   "probe": "https://replicate.com/explore",
+   "last_ok": "2026-11-02",
+   "fail_count": 0,
+   "parse": {}
+  },
+  {
+   "id": "awesome_creative_coding",
+   "name": "awesome-creative-coding",
+   "group": "A5b",
+   "chain": "L2",
+   "tier": "A",
+   "status": "verified",
+   "entry": "github.com/terkelg/awesome-creative-coding",
+   "covers": [
+    "跨端"
+   ],
+   "note": "15.5K | 每仓 2 次 API 调用，未认证限 60/小时，需串行",
+   "via": "script",
+   "probe": "https://api.github.com/repos/terkelg/awesome-creative-coding",
+   "last_ok": "2026-11-02",
+   "fail_count": 0,
+   "parse": {}
+  },
+  {
+   "id": "topic_interactive_art",
+   "name": "GitHub topics/interactive-art",
+   "group": "A5b",
+   "chain": "L2",
+   "tier": "A",
+   "status": "verified",
+   "entry": "github.com/topics/interactive-art",
+   "covers": [
+    "南向硬件"
+   ],
+   "note": "388 repos，传感器与硬件密集 | 搜索 API 比 topic 页稳",
+   "via": "script",
+   "probe": "https://api.github.com/search/repositories?q=topic:interactive-art&sort=updated&per_page=100",
+   "last_ok": "2026-11-02",
+   "fail_count": 0,
+   "last_count": 20,
+   "parse": {
+    "pages": 3,
+    "per_page": 100
+   }
+  },
+  {
+   "id": "topic_creative_coding",
+   "name": "GitHub topics/creative-coding",
+   "group": "A5b",
+   "chain": "L2",
+   "tier": "A",
+   "status": "verified",
+   "entry": "github.com/topics/creative-coding",
+   "covers": [
+    "跨端"
+   ],
+   "note": "57 repos / 403K★ | 未认证 search API 限 10 次/分，需间隔",
+   "via": "script",
+   "probe": "https://api.github.com/search/repositories?q=topic:creative-coding&sort=stars&per_page=100",
+   "last_ok": "2026-11-02",
+   "fail_count": 0,
+   "last_count": 20,
+   "parse": {
+    "pages": 3,
+    "per_page": 100
+   }
+  },
+  {
+   "id": "chinese_indie_dev",
+   "name": "chinese-independent-developer",
+   "group": "A5b",
+   "chain": "L2",
+   "tier": "A",
+   "status": "verified",
+   "entry": "github.com/1c7/chinese-independent-developer",
+   "covers": [
+    "跨端"
+   ],
+   "note": "61.9K，中国独立开发者 | 每仓 2 次 API 调用，未认证限 60/小时，需串行",
+   "via": "script",
+   "probe": "https://api.github.com/repos/1c7/chinese-independent-developer",
+   "last_ok": "2026-11-02",
+   "fail_count": 0,
+   "parse": {}
+  },
+  {
+   "id": "css_inspiration",
+   "name": "CSS-Inspiration",
+   "group": "A5b",
+   "chain": "L2",
+   "tier": "A",
+   "status": "verified",
+   "entry": "github.com/chokcoco/CSS-Inspiration",
+   "covers": [
+    "跨端"
+   ],
+   "note": "纯 CSS 特效 demo | 每仓 2 次 API 调用，未认证限 60/小时，需串行",
+   "via": "script",
+   "probe": "https://api.github.com/repos/chokcoco/CSS-Inspiration",
+   "last_ok": "2026-11-02",
+   "fail_count": 0,
+   "parse": {}
+  },
+  {
+   "id": "awesome_opus_videos",
+   "name": "awesome-opus5-5-videos",
+   "group": "A5b",
+   "chain": "L2",
+   "tier": "A",
+   "status": "verified",
+   "entry": "github.com/yihui-dev/awesome-opus5-5-videos",
+   "covers": [
+    "跨端"
+   ],
+   "note": "每条附原 prompt 与原帖 | 每仓 2 次 API 调用，未认证限 60/小时，需串行",
+   "via": "script",
+   "probe": "https://api.github.com/repos/yihui-dev/awesome-opus5-5-videos",
+   "last_ok": "2026-11-02",
+   "fail_count": 0,
+   "parse": {}
+  },
+  {
+   "id": "mg_styles_15",
+   "name": "mg-styles-15",
+   "group": "A5b",
+   "chain": "L2",
+   "tier": "A",
+   "status": "verified",
+   "entry": "github.com/Vincentwei1021/mg-styles-15",
+   "covers": [
+    "跨端"
+   ],
+   "note": "15 个十秒动效，带源码 | 每仓 2 次 API 调用，未认证限 60/小时，需串行",
+   "via": "script",
+   "probe": "https://api.github.com/repos/Vincentwei1021/mg-styles-15",
+   "last_ok": "2026-11-02",
+   "fail_count": 0,
+   "parse": {}
+  },
+  {
+   "id": "realworld",
+   "name": "realworld",
+   "group": "A5b",
+   "chain": "L2",
+   "tier": "A",
+   "status": "verified",
+   "entry": "github.com/realworld-apps/realworld",
+   "covers": [
+    "跨端"
+   ],
+   "note": "同 App 100+ 框架实现 | 每仓 2 次 API 调用，未认证限 60/小时，需串行",
+   "via": "script",
+   "probe": "https://api.github.com/repos/realworld-apps/realworld",
+   "last_ok": "2026-11-02",
+   "fail_count": 0,
+   "parse": {}
+  },
+  {
+   "id": "kickstarter",
+   "name": "Kickstarter",
+   "group": "A6",
+   "chain": "L1",
+   "tier": "B",
+   "status": "blocked",
+   "entry": "RSS 返回 403（Cloudflare）",
+   "covers": [
+    "南向硬件"
+   ],
+   "note": "未量产就能看想法与定价 | 403 Cloudflare",
+   "alternative": "kicktraq 已通；或 RSSHub /kickstarter/discover",
+   "via": "webfetch",
+   "last_ok": "",
+   "parse": {}
+  },
+  {
+   "id": "indiegogo",
+   "name": "Indiegogo",
+   "group": "A6",
+   "chain": "L1",
+   "tier": "B",
+   "status": "blocked",
+   "entry": "indiegogo.com",
+   "covers": [
+    "南向硬件"
+   ],
+   "note": "海外硬件形态试验场 | 403 Cloudflare",
+   "via": "webfetch",
+   "last_ok": "",
+   "alternative": "kicktraq 已通，可看众筹进度；或搜「Indiegogo <品类> 2026」",
+   "parse": {}
+  },
+  {
+   "id": "modian",
+   "name": "摩点",
+   "group": "A6",
+   "chain": "L1",
+   "tier": "B",
+   "status": "verified",
+   "entry": "modian.com",
+   "covers": [
+    "南向硬件"
+   ],
+   "note": "国内小团队",
+   "via": "script",
+   "probe": "https://zhongchou.modian.com",
+   "last_ok": "2026-11-02",
+   "fail_count": 0,
+   "parse": {
+    "match": "/item/",
+    "min_len": 6,
+    "abs": "https://zhongchou.modian.com"
+   }
+  },
+  {
+   "id": "ifixit",
+   "name": "iFixit",
+   "group": "A7",
+   "chain": "L1",
+   "tier": "B",
+   "status": "blocked",
+   "entry": "/News/rss 返回 154B 空",
+   "covers": [
+    "南向硬件"
+   ],
+   "note": "权重最高的一类：怎么做出来的、成本多少 | /News/rss 与 /Teardown 均返回 154B 空",
+   "alternative": "搜「<产品> teardown」看镜像与二手转述",
+   "via": "webfetch",
+   "last_ok": "",
+   "parse": {}
+  },
+  {
+   "id": "wekihome",
+   "name": "微机分 WekiHome",
+   "group": "A7",
+   "chain": "L1",
+   "tier": "B",
+   "status": "blocked",
+   "entry": "wekihome.com",
+   "covers": [
+    "南向硬件"
+   ],
+   "note": "中文深度拆解 | ConnectionError",
+   "via": "webfetch",
+   "last_ok": "",
+   "alternative": "搜「微机分 <产品> 拆解」",
+   "parse": {}
+  },
+  {
+   "id": "ios_release",
+   "name": "iOS Release Notes",
+   "group": "B1",
+   "chain": "L1",
+   "tier": "A",
+   "status": "verified",
+   "entry": "developer.apple.com/news/releases",
+   "covers": [
+    "手机",
+    "平板",
+    "手表",
+    "耳机"
+   ],
+   "note": "功能清单比发布会准 | ★ 有官方 RSS，B1 唯一能脚本抓的更新日志",
+   "via": "script",
+   "probe": "https://developer.apple.com/news/releases/rss/releases.rss",
+   "last_ok": "2026-11-02",
+   "fail_count": 0,
+   "last_count": 43,
+   "parse": {}
+  },
+  {
+   "id": "oneui",
+   "name": "One UI 更新",
+   "group": "B1",
+   "chain": "L1",
+   "tier": "B",
+   "status": "todo",
+   "entry": "samsung.com 支持页",
+   "covers": [
+    "手机",
+    "平板",
+    "手表"
+   ],
+   "note": "隐私类功能常先落 | 支持页只有导航，更新说明在子页，改人工进",
+   "via": "webfetch",
+   "probe": "https://www.samsung.com/cn/support/",
+   "last_ok": "2026-11-02",
+   "fail_count": 0,
+   "parse": {
+    "match": "/support/",
+    "min_len": 6,
+    "abs": "https://www.samsung.com"
+   }
+  },
+  {
+   "id": "hyperos",
+   "name": "HyperOS 更新",
+   "group": "B1",
+   "chain": "L1",
+   "tier": "B",
+   "status": "verified",
+   "entry": "mi.com 支持页",
+   "covers": [
+    "手机",
+    "平板",
+    "手表",
+    "车机"
+   ],
+   "note": "人车家联动最密 | 支持页只有导航，更新说明在子页，改人工进",
+   "via": "script",
+   "probe": "https://www.mi.com/service/support",
+   "last_ok": "2026-11-02",
+   "fail_count": 0,
+   "parse": {
+    "match": "/service/",
+    "min_len": 6,
+    "abs": "https://www.mi.com"
+   }
+  },
+  {
+   "id": "originos",
+   "name": "OriginOS 更新",
+   "group": "B1",
+   "chain": "L1",
+   "tier": "B",
+   "status": "todo",
+   "entry": "vivo.com.cn 支持页",
+   "covers": [
+    "手机",
+    "平板",
+    "手表"
+   ],
+   "note": "蓝心落地节奏 | 支持页只有导航，更新说明在子页，改人工进",
+   "via": "webfetch",
+   "probe": "https://www.vivo.com.cn/service/",
+   "last_ok": "2026-11-02",
+   "fail_count": 0,
+   "parse": {
+    "match": "/service/",
+    "min_len": 6,
+    "abs": "https://www.vivo.com.cn"
+   }
+  },
+  {
+   "id": "coloros",
+   "name": "ColorOS 更新",
+   "group": "B1",
+   "chain": "L1",
+   "tier": "B",
+   "status": "todo",
+   "entry": "oppo.com/cn 支持页",
+   "covers": [
+    "手机",
+    "平板",
+    "手表"
+   ],
+   "note": "端侧计算与记忆引擎 | 支持页只有导航，更新说明在子页，改人工进",
+   "via": "webfetch",
+   "probe": "https://www.oppo.com/cn/service/",
+   "last_ok": "2026-11-02",
+   "fail_count": 0,
+   "parse": {
+    "match": "/service/",
+    "min_len": 6,
+    "abs": "https://www.oppo.com"
+   }
+  },
+  {
+   "id": "flyme",
+   "name": "Flyme 更新",
+   "group": "B1",
+   "chain": "L1",
+   "tier": "B",
+   "status": "todo",
+   "entry": "meizu.com 支持页",
+   "covers": [
+    "手机"
+   ],
+   "note": "常有反向思路，适合当反例 | 支持页只有导航，更新说明在子页，改人工进",
+   "via": "webfetch",
+   "probe": "https://www.meizu.com/service/",
+   "last_ok": "2026-11-02",
+   "fail_count": 0,
+   "parse": {
+    "match": "/service/",
+    "min_len": 6,
+    "abs": "https://www.meizu.com"
+   }
+  },
+  {
+   "id": "harmonyos",
+   "name": "HarmonyOS 更新说明",
+   "group": "B1",
+   "chain": "L1",
+   "tier": "B",
+   "status": "verified",
+   "entry": "consumer.huawei.com 支持 → 发布说明",
+   "covers": [
+    "手机",
+    "平板",
+    "手表",
+    "耳机",
+    "智慧屏",
+    "车机"
+   ],
+   "note": "自家基线，防重复提案的第一道关 | 页面可读，更新说明需再进一层",
+   "via": "script",
+   "probe": "https://consumer.huawei.com/cn/support/",
+   "last_ok": "2026-11-02",
+   "fail_count": 0,
+   "parse": {
+    "match": "/cn/",
+    "exclude": "/support/",
+    "min_len": 6,
+    "abs": "https://consumer.huawei.com"
+   }
+  },
+  {
+   "id": "verge",
+   "name": "The Verge",
+   "group": "B3",
+   "chain": "L1",
+   "tier": "A",
+   "status": "verified",
+   "entry": "https://www.theverge.com/rss/index.xml",
+   "covers": [
+    "跨端"
+   ],
+   "note": "29KB Atom，当天列表",
+   "last_count": 10,
+   "via": "script",
+   "probe": "https://www.theverge.com/rss/index.xml",
+   "parse": {}
+  },
+  {
+   "id": "nine5mac",
+   "name": "9to5Mac",
+   "group": "B3",
+   "chain": "L1",
+   "tier": "A",
+   "status": "verified",
+   "entry": "https://9to5mac.com/feed/",
+   "covers": [
+    "手机",
+    "平板",
+    "手表",
+    "耳机"
+   ],
+   "note": "186KB RSS",
+   "last_count": 100,
+   "via": "script",
+   "probe": "https://9to5mac.com/feed/",
+   "parse": {}
+  },
+  {
+   "id": "androidauthority",
+   "name": "Android Authority",
+   "group": "B3",
+   "chain": "L1",
+   "tier": "A",
+   "status": "verified",
+   "entry": "https://www.androidauthority.com/feed/",
+   "covers": [
+    "手机",
+    "平板"
+   ],
+   "note": "253KB RSS",
+   "last_count": 80,
+   "via": "script",
+   "probe": "https://www.androidauthority.com/feed/",
+   "parse": {}
+  },
+  {
+   "id": "gsmarena",
+   "name": "GSMArena",
+   "group": "B3",
+   "chain": "L1",
+   "tier": "A",
+   "status": "verified",
+   "entry": "https://www.gsmarena.com/rss-news-reviews.php3",
+   "covers": [
+    "手机",
+    "平板"
+   ],
+   "note": "新品、泄露、参数口径最全",
+   "last_count": 20,
+   "via": "script",
+   "probe": "https://www.gsmarena.com/rss-news-reviews.php3",
+   "parse": {}
+  },
+  {
+   "id": "engadget",
+   "name": "Engadget",
+   "group": "B3",
+   "chain": "L1",
+   "tier": "B",
+   "status": "blocked",
+   "entry": "engadget.com/rss.xml 返回 202 空",
+   "covers": [
+    "跨端"
+   ],
+   "note": "返回 202 空",
+   "alternative": "WebFetch 首页，或搜「Engadget <主题>」",
+   "via": "webfetch",
+   "last_ok": "",
+   "parse": {}
+  },
+  {
+   "id": "techcrunch",
+   "name": "TechCrunch",
+   "group": "B3",
+   "chain": "L1",
+   "tier": "A",
+   "status": "verified",
+   "entry": "https://techcrunch.com/feed/",
+   "covers": [
+    "跨端"
+   ],
+   "note": "融资与创业，看钱往哪流",
+   "last_count": 20,
+   "via": "script",
+   "probe": "https://techcrunch.com/feed/",
+   "parse": {}
+  },
+  {
+   "id": "theinformation",
+   "name": "The Information",
+   "group": "B3",
+   "chain": "L1",
+   "tier": "C",
+   "status": "blocked",
+   "entry": "付费墙",
+   "covers": [
+    "跨端"
+   ],
+   "note": "深度产业报道",
+   "alternative": "搜标题看二手转述，标注来源层级",
+   "via": "manual",
+   "parse": {}
+  },
+  {
+   "id": "dcfever",
+   "name": "DCFever 摄影",
+   "group": "B3",
+   "chain": "L1",
+   "tier": "B",
+   "status": "blocked",
+   "entry": "/news/rss.php 返回 404",
+   "covers": [
+    "南向硬件"
+   ],
+   "note": "机身/固件/监看 App 比科技媒体更早更细 | ReadTimeout",
+   "alternative": "WebFetch 打开 dcfever.com/news",
+   "via": "webfetch",
+   "last_ok": "",
+   "parse": {}
+  },
+  {
+   "id": "ifanr",
+   "name": "爱范儿",
+   "group": "B4",
+   "chain": "L4",
+   "tier": "A",
+   "status": "verified",
+   "entry": "https://www.ifanr.com/feed",
+   "covers": [
+    "跨端"
+   ],
+   "note": "452KB，海外一手内容的优质搬运",
+   "last_count": 20,
+   "via": "script",
+   "probe": "https://www.ifanr.com/feed",
+   "parse": {}
+  },
+  {
+   "id": "sspai",
+   "name": "少数派",
+   "group": "B4",
+   "chain": "L4",
+   "tier": "A",
+   "status": "verified",
+   "entry": "https://sspai.com/feed",
+   "covers": [
+    "跨端"
+   ],
+   "note": "用户怎么用，比产品怎么设计更重要",
+   "last_count": 10,
+   "via": "script",
+   "probe": "https://sspai.com/feed",
+   "parse": {}
+  },
+  {
+   "id": "ithome",
+   "name": "IT之家",
+   "group": "B4",
+   "chain": "L4",
+   "tier": "A",
+   "status": "verified",
+   "entry": "https://www.ithome.com/rss/",
+   "covers": [
+    "跨端"
+   ],
+   "note": "更新最快的中文快讯",
+   "last_count": 60,
+   "via": "script",
+   "probe": "https://www.ithome.com/rss/",
+   "parse": {}
+  },
+  {
+   "id": "36kr",
+   "name": "36氪",
+   "group": "B4",
+   "chain": "L4",
+   "tier": "B",
+   "status": "todo",
+   "entry": "36kr.com/feed 返回 HTML 非 XML",
+   "covers": [
+    "跨端"
+   ],
+   "note": "页面整页 JS 渲染，HTML 里无链接",
+   "alternative": "36kr.com/information/technology 页面解析",
+   "via": "webfetch",
+   "probe": "https://36kr.com/information/technology",
+   "last_ok": "2026-11-02",
+   "fail_count": 0,
+   "parse": {
+    "match": "/p/",
+    "exclude": "/information",
+    "min_len": 8,
+    "abs": "https://36kr.com"
+   }
+  },
+  {
+   "id": "geekpark",
+   "name": "极客公园",
+   "group": "B4",
+   "chain": "L4",
+   "tier": "A",
+   "status": "verified",
+   "entry": "geekpark.net/rss 代理报错",
+   "covers": [
+    "跨端"
+   ],
+   "note": "战略层访谈 | ★ /rss 通，436KB",
+   "alternative": "geekpark.net 页面解析，或搜「极客公园 <主题>」",
+   "via": "script",
+   "probe": "https://www.geekpark.net/rss",
+   "last_ok": "2026-11-02",
+   "fail_count": 0,
+   "last_count": 30,
+   "parse": {}
+  },
+  {
+   "id": "xhs",
+   "name": "小红书",
+   "group": "C1",
+   "chain": "L3",
+   "tier": "C",
+   "status": "config",
+   "entry": "Chrome + OpenCLI 登录态（CDP 9222）",
+   "covers": [
+    "跨端"
+   ],
+   "note": "差异化 idea 最可能从这儿出来",
+   "alternative": "搜索结果里的二手转述 + 销量/退货率硬指标",
+   "via": "manual",
+   "parse": {}
+  },
+  {
+   "id": "douyin",
+   "name": "抖音",
+   "group": "C1",
+   "chain": "L3",
+   "tier": "C",
+   "status": "config",
+   "entry": "登录态",
+   "covers": [
+    "跨端"
+   ],
+   "note": "看什么被大规模模仿",
+   "alternative": "同上，搜「抖音 <品类> 爆款」",
+   "via": "manual",
+   "parse": {}
+  },
+  {
+   "id": "bili",
+   "name": "B站",
+   "group": "C1",
+   "chain": "L3",
+   "tier": "A",
+   "status": "verified",
+   "entry": "rssforever 实例缺 Playwright",
+   "covers": [
+    "跨端"
+   ],
+   "note": "★ ranking/v2 是过期缓存（返回 2025 年数据），改用 popular 热门接口，数据当天。必带 Referer | 全站热门仍以娱乐为主，不进正文，只做「社交侧在传什么」的旁证",
+   "alternative": "WebSearch <主题> site:bilibili.com，或 yt-dlp 搜 B站",
+   "via": "script",
+   "probe": "https://api.bilibili.com/x/web-interface/popular?ps=30&pn=1",
+   "last_ok": "2026-11-02",
+   "fail_count": 0,
+   "last_count": 100,
+   "parse": {}
+  },
+  {
+   "id": "weibo",
+   "name": "微博",
+   "group": "C1",
+   "chain": "L3",
+   "tier": "C",
+   "status": "config",
+   "entry": "登录态",
+   "covers": [
+    "跨端"
+   ],
+   "note": "看情绪不看事实",
+   "alternative": "搜「<产品> 微博 热搜」",
+   "via": "manual",
+   "parse": {}
+  },
+  {
+   "id": "zhihu",
+   "name": "知乎热榜",
+   "group": "C1",
+   "chain": "L3",
+   "tier": "C",
+   "status": "blocked",
+   "entry": "rsshub.rssforever.com/zhihu/hot 读超时",
+   "covers": [
+    "跨端"
+   ],
+   "note": "技术讨论与行业内幕 | 直连 403，rsshub 实例超时",
+   "alternative": "换 RSSHub 实例（rsshub.rssforever.com 读超时）",
+   "via": "webfetch",
+   "last_ok": "",
+   "parse": {}
+  },
+  {
+   "id": "tieba",
+   "name": "贴吧",
+   "group": "C1",
+   "chain": "L3",
+   "tier": "C",
+   "status": "config",
+   "entry": "登录态",
+   "covers": [
+    "跨端"
+   ],
+   "note": "",
+   "via": "manual",
+   "parse": {}
+  },
+  {
+   "id": "youtube",
+   "name": "YouTube",
+   "group": "C2",
+   "chain": "L3",
+   "tier": "A",
+   "status": "verified",
+   "entry": "rsshub 频道列表 + yt-dlp 搜索/字幕",
+   "covers": [
+    "跨端"
+   ],
+   "note": "字幕能纠正二手转述；yt-dlp 需 --js-runtime",
+   "via": "script",
+   "probe": "https://rsshub.rssforever.com/youtube/user/mrwhosetheboss",
+   "parse": {}
+  },
+  {
+   "id": "instagram",
+   "name": "Instagram",
+   "group": "C2",
+   "chain": "L3",
+   "tier": "C",
+   "status": "blocked",
+   "entry": "API 429，公共实例限流",
+   "covers": [
+    "跨端"
+   ],
+   "note": "",
+   "alternative": "自建 RSSHub 注入 cookie；或从中文转载反查",
+   "via": "manual",
+   "parse": {}
+  },
+  {
+   "id": "tiktok",
+   "name": "TikTok",
+   "group": "C2",
+   "chain": "L3",
+   "tier": "C",
+   "status": "blocked",
+   "entry": "未验证",
+   "covers": [
+    "跨端"
+   ],
+   "note": "比 YouTube 快但更浅 | SSLError，需登录",
+   "via": "manual",
+   "last_ok": "",
+   "alternative": "搜「TikTok <玩法> 爆款」看二手转述",
+   "parse": {}
+  },
+  {
+   "id": "jd_recruit",
+   "name": "招聘 JD",
+   "group": "D",
+   "chain": "L2",
+   "tier": "B",
+   "status": "todo",
+   "entry": "各厂招聘官网 / BOSS",
+   "covers": [
+    "跨端"
+   ],
+   "note": "唯一能比发布会早一年看到战略",
+   "via": "manual",
+   "parse": {}
+  },
+  {
+   "id": "itjuzi",
+   "name": "IT桔子 / Crunchbase",
+   "group": "D",
+   "chain": "L2",
+   "tier": "B",
+   "status": "blocked",
+   "entry": "itjuzi.com",
+   "covers": [
+    "跨端"
+   ],
+   "note": "钱往哪流 | 412 反爬",
+   "via": "webfetch",
+   "last_ok": "",
+   "alternative": "搜「<公司> 融资 <年份>」看媒体转述",
+   "parse": {}
+  },
+  {
+   "id": "supply_chain",
+   "name": "供应链媒体",
+   "group": "D",
+   "chain": "L2",
+   "tier": "B",
+   "status": "verified",
+   "entry": "DigiTimes / 集微网 / 芯智讯",
+   "covers": [
+    "南向硬件"
+   ],
+   "note": "备货、产能、新玩家 | 首页正文少，需进栏目页",
+   "via": "script",
+   "probe": "https://www.digitimes.com/news/",
+   "last_ok": "2026-11-02",
+   "fail_count": 0,
+   "parse": {
+    "match": "/news/a",
+    "min_len": 12,
+    "abs": "https://www.digitimes.com"
+   }
+  },
+  {
+   "id": "ces",
+   "name": "CES",
+   "group": "D",
+   "chain": "L5",
+   "tier": "B",
+   "status": "todo",
+   "entry": "ces.tech，每年 1 月",
+   "covers": [
+    "跨端"
+   ],
+   "note": "创新奖名单是筛过一遍的 | 首页/news 均 ReadTimeout，改为年度手查",
+   "via": "webfetch",
+   "probe": "https://www.ces.tech",
+   "last_ok": "2026-11-02",
+   "fail_count": 0,
+   "parse": {
+    "match": "/news/",
+    "min_len": 12,
+    "abs": "https://www.ces.tech"
+   }
+  },
+  {
+   "id": "mwc",
+   "name": "MWC 巴塞罗那",
+   "group": "D",
+   "chain": "L5",
+   "tier": "B",
+   "status": "todo",
+   "entry": "mwcbarcelona.com，3 月",
+   "covers": [
+    "手机",
+    "跨端"
+   ],
+   "note": "看全年方向 | 页面只有导航，新闻在 /news 子页且需再解析，收益低于成本",
+   "via": "webfetch",
+   "probe": "https://www.mwcbarcelona.com",
+   "last_ok": "2026-11-02",
+   "fail_count": 0,
+   "parse": {
+    "match": "/news",
+    "min_len": 12,
+    "abs": "https://www.mwcbarcelona.com"
+   }
+  },
+  {
+   "id": "ifa",
+   "name": "IFA",
+   "group": "D",
+   "chain": "L5",
+   "tier": "B",
+   "status": "todo",
+   "entry": "ifa-berlin.com，9 月",
+   "covers": [
+    "智慧屏",
+    "音箱"
+   ],
+   "note": "家电与影音 | 同上",
+   "via": "webfetch",
+   "probe": "https://www.ifa-berlin.com",
+   "last_ok": "2026-11-02",
+   "fail_count": 0,
+   "parse": {
+    "match": "/news",
+    "min_len": 12,
+    "abs": "https://www.ifa-berlin.com"
+   }
+  },
+  {
+   "id": "awe",
+   "name": "AWE（AR/VR）",
+   "group": "D",
+   "chain": "L5",
+   "tier": "B",
+   "status": "todo",
+   "entry": "awexr.com，6 月",
+   "covers": [
+    "眼镜"
+   ],
+   "note": "眼镜形态风向标 | 同上",
+   "via": "webfetch",
+   "probe": "https://www.awexr.com",
+   "last_ok": "2026-11-02",
+   "fail_count": 0,
+   "parse": {
+    "match": "/news",
+    "min_len": 12,
+    "abs": "https://www.awexr.com"
+   }
+  },
+  {
+   "id": "digests",
+   "name": "聚合日报 / newsletter",
+   "group": "E",
+   "chain": "L4",
+   "tier": "B",
+   "status": "config",
+   "entry": "RSSHub / GSMArena 周榜 / startupcorners digest",
+   "covers": [
+    "跨端"
+   ],
+   "note": "无单一地址，按需选具体 newsletter",
+   "via": "manual",
+   "parse": {}
+  },
+  {
+   "id": "crossref",
+   "name": "Crossref API",
+   "group": "A3",
+   "chain": "L2",
+   "tier": "A",
+   "status": "verified",
+   "via": "script",
+   "probe": "https://api.crossref.org/works?query=<词>&rows=20&sort=published&order=desc&filter=from-pub-date:2025-06-01,type:journal-article",
+   "entry": "api.crossref.org/works?query=<词>&rows=20",
+   "covers": [
+    "跨端"
+   ],
+   "last_ok": "2026-11-02",
+   "fail_count": 0,
+   "discovered_from": "反查 ACM DL 403 后的替代",
+   "note": "必须带 from-pub-date，否则返回 2023 甚至未来日期的条目；未来日期需在代码里过滤",
+   "last_count": 5,
+   "parse": {}
+  },
+  {
+   "id": "macrumors",
+   "name": "MacRumors",
+   "group": "B3",
+   "chain": "L1",
+   "tier": "A",
+   "status": "verified",
+   "via": "script",
+   "probe": "https://feeds.macrumors.com/MacRumors-All",
+   "entry": "feeds.macrumors.com/MacRumors-All",
+   "covers": [
+    "手机",
+    "平板",
+    "手表",
+    "耳机"
+   ],
+   "last_ok": "2026-11-02",
+   "fail_count": 0,
+   "discovered_from": "看别人的源列表",
+   "note": "90KB XML，苹果生态一手爆料与固件信息",
+   "last_count": 20,
+   "parse": {}
+  },
+  {
+   "id": "qbitai",
+   "name": "量子位",
+   "group": "B4",
+   "chain": "L1",
+   "tier": "A",
+   "status": "verified",
+   "via": "script",
+   "probe": "https://www.qbitai.com/feed",
+   "entry": "qbitai.com/feed",
+   "covers": [
+    "跨端"
+   ],
+   "last_ok": "2026-11-02",
+   "fail_count": 0,
+   "discovered_from": "看别人的源列表",
+   "note": "RSS 通，AI 应用与硬件在国内最早的一批报道",
+   "last_count": 10,
+   "parse": {}
+  },
+  {
+   "id": "kicktraq",
+   "name": "Kicktraq",
+   "group": "A6",
+   "chain": "L1",
+   "tier": "B",
+   "status": "verified",
+   "via": "script",
+   "probe": "https://www.kicktraq.com",
+   "entry": "kicktraq.com 按品类看众筹进度曲线",
+   "covers": [
+    "南向硬件"
+   ],
+   "last_ok": "2026-11-02",
+   "fail_count": 0,
+   "discovered_from": "反查 Kickstarter 403 后的替代",
+   "note": "Kickstarter 403 的替代：能看筹款曲线与最终达成率，比列表页多一层判断",
+   "parse": {}
+  },
+  {
+   "id": "devpost_events",
+   "name": "Devpost 开放赛事",
+   "group": "A1",
+   "chain": "L2",
+   "tier": "A",
+   "status": "todo",
+   "via": "script",
+   "last_ok": "2026-11-03",
+   "fail_count": 0,
+   "last_count": 9,
+   "probe": "https://devpost.com/api/hackathons?status[]=open",
+   "entry": "devpost.com/api/hackathons?status[]=open",
+   "covers": [
+    "跨端"
+   ],
+   "discovered_from": "反查 /software 页面时发现",
+   "note": "9 个开放赛事，带日期/奖金/人数。只作为赛事日历，不产项目；A1 项目采集不要把它算进候选。",
+   "parse": {}
+  }
+ ]
+}
