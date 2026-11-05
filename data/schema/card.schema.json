@@ -36,7 +36,7 @@
     },
     "standard_category": {
       "type": "string",
-      "enum": ["论文", "专利", "demo类", "技术类", "公众号"]
+      "enum": ["论文", "专利", "demo类", "技术类", "模型", "公众号"]
     },
     "device_tags": { "type": "array", "items": { "type": "string" } },
     "hardware_tag": {
