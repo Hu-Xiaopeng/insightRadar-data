@@ -1,9 +1,9 @@
 {
  "schema_version": 1,
- "generated_at": "2026-11-05T09:32:15+0800",
+ "generated_at": "2026-11-05T14:14:36+0800",
  "file": "cards.jsonl",
- "total": 740,
- "sha256": "3dddaa4448d0963eeae73c996833dcbad1662f090b736f8e3f817a6651f0390a",
- "bytes": 2485950,
+ "total": 739,
+ "sha256": "be831025c2fa7f1b4033814689f9ac155e5c5a79bc0cc08190d346956de0c0d6",
+ "bytes": 2482911,
  "last_run": "migrate"
 }
